@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "message_notify_user",
+    "description": "向用户发送消息而不需要回复。用于确认收到消息、提供进度更新、报告任务完成或解释方法变更。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "显示给用户的消息文本"
+        },
+        "attachments": {
+          "anyOf": [
+            {"type": "string"},
+            {"items": {"type": "string"}, "type": "array"}
+          ],
+          "description": "（可选）显示给用户的附件列表，可以是文件路径或URL"
+        }
+      },
+      "required": ["text"]
+    }
+  }
+}

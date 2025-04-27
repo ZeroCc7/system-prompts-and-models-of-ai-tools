@@ -1,0 +1,10 @@
+{
+  "browser_preview": {
+    "schema": "<browser_preview>\n{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"properties\":{\"Url\":{\"type\":\"string\",\"description\":\"目标Web服务器的URL，用于提供浏览器预览。应包含协议（如http://或https://）、域名（如localhost或127.0.0.1）和端口（如:8080），但不包含路径。\"},\"Name\":{\"type\":\"string\",\"description\":\"目标Web服务器的简短名称（3-5个单词）。应采用标题格式，例如'个人网站'。直接输出标题，不要添加'Title:'等前缀。\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"Url\",\"Name\"]}\n</browser_preview>",
+    "description": "为Web服务器启动浏览器预览。这允许用户正常与Web服务器交互，并将控制台日志等信息提供给Cascade。注意此工具调用不会自动为用户打开浏览器预览，用户必须点击提供的按钮才能在浏览器中打开。"
+  },
+  "check_deploy_status": {
+    "schema": "<check_deploy_status>\n{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"properties\":{\"WindsurfDeploymentId\":{\"type\":\"string\",\"description\":\"要检查状态的部署的Windsurf部署ID。这不是project_id。\"}},\"additionalProperties\":false,\"type\":\"object\",\"required\":[\"WindsurfDeploymentId\"]}\n</check_deploy_status>",
+    "description": "使用windsurf_deployment_id检查Web应用程序的部署状态，确定应用程序构建是否成功以及是否已被认领。除非用户要求，否则不要运行此工具。它必须在deploy_web_app工具调用之后运行。"
+  }
+}
